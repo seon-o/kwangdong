@@ -7,6 +7,7 @@
     border-bottom: 1px solid rgba(50,50,54,0.1);
     transition: background .25s ease-in-out;
     background-color: #fff;
+    z-index: 100;
 }
 
 
@@ -30,10 +31,10 @@ label.toogle {
 }
 
 #nav_line {
-    position: absolute;
-    right: 10px; 
-    top: 5px;
-    z-index: 150;
+    position: fixed;
+    right: 15px; 
+    top: 20px;
+    z-index: 250;
 }
 
 #nav_line > span {
@@ -157,22 +158,6 @@ input#toggle + #wrap #toggle_nav > ul {
     right: 80%;
 }
 
-/*#toggle + #wrap #toggle_nav + label.bg{
-    width: 20%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    position: fixed;
-    left: -20%; top: 0;
-	z-index: 100;
-	opacity: 0;
-	transition-property: opacity;
-	transition-duration: 0.3s;
-	transition-delay: 0.3s;
-}
-#toggle:checked + #wrap #toggle_nav + label.bg{
-    left: 0;
-	opacity: 1;
-} */
-
 #toggle + #wrap #toggle_nav {
     width: 80%; 
     height: 100%;
@@ -242,11 +227,31 @@ input#toggle + #wrap #toggle_nav > ul {
     top: 43px;
 }
 
+.search__container > .inner {
+    max-width: 960px;
+    margin: 40px 20px;
+}
+
 .input__container {
-    width: 80%;
-    margin: 20px auto;
+    height: 60px;
 }
     
+.input__container input {
+    font-size: 1rem;
+    background: #fff;
+}
+
+.input__container > button {
+    width: 31px;
+    height: 31px;
+    display: block;
+    background: url(../img/search_button.png) no-repeat;
+    background-size: 80%;
+    position: absolute;
+    top: 16px;
+    right: 23px;
+}
+
 .options .tit-option {
     text-align: center;
 }
