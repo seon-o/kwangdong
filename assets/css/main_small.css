@@ -1,0 +1,264 @@
+.main_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    border-bottom: 1px solid rgba(50,50,54,0.1);
+    transition: background .25s ease-in-out;
+    background-color: #fff;
+}
+
+
+.main_header > div{
+    height: 60px;
+}
+
+header .logo a {
+    background: url(../img/logo.png) 10px 15px no-repeat;
+    background-size: 80%;
+}
+
+.menu-group,
+.lang-group {
+    display: none;
+}
+
+label.toogle {
+    display: block;
+    width:27px; height:27px;
+}
+
+#nav_line {
+    position: absolute;
+    right: 10px; 
+    top: 5px;
+    z-index: 150;
+}
+
+#nav_line > span {
+    display: block;
+    width: 27px;
+    height: 3px;
+    background: #43495d;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    transition-duration: 0.3s;
+}
+
+#nav_line.on > .line1 {
+    width: 27px;
+    margin: -3px 0 0 -3px;
+    transform: translateY(10px) rotate(45deg);
+}
+#nav_line.on > .line2 {
+    display:none;
+}
+#nav_line.on > .line3 {
+    width: 27px;
+    margin: -3px 0 0 -3px;
+    transform: translateY(10px) rotate(-45deg);
+}
+
+input#toggle + #wrap #toggle_nav {
+    width:100%;
+    position: fixed;
+    top: 0; right: -110%; bottom: 0;
+    z-index: 100;
+    transition-duration: 0.3s;
+    overflow: auto;
+}
+
+input#toggle:checked + #wrap #toggle_nav {
+    right: 0;
+}
+
+input#toggle + #wrap #toggle_nav > ul {
+    width: 80%;
+
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    padding-top: 80px;
+
+    background: #fff;
+   }
+
+    #wrap #toggle_nav > ul > li {
+        line-height: 50px;
+        padding: 0 20px;
+    }
+    #toggle_nav > ul > li > h2 {
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    #toggle_nav > ul > li > h2::after {
+        content: '';
+        display: block;
+        position: absolute;
+        margin-top: -36px;
+        right: 50px;
+        width: 20px;
+        height: 20px;
+        transition: all .3s ease-in-out;
+        background: url(../img/common_sprites.svg);
+        background-position: -199px -285px;
+        transform:rotate(90deg);
+    }
+
+    #toggle_nav > ul > li.active > h2::after {
+        transform:rotate(-90deg);
+    }
+
+    #toggle_nav > ul > li > a {
+        display: none;      
+    }
+    #toggle_nav > ul > li > ul > li {
+        height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition-duration: 0.3s;
+    }
+    #toggle_nav > ul > li > ul > li > a {
+        font-size: 0.9em;
+    }
+
+    #toggle + #wrap #toggle_nav + label.bg {
+        width: 20%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        position: fixed;
+        left: -20%;
+        top: 0;
+        z-index: 200;
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.3s;
+        transition-delay: 0.3s;
+    }
+    #toggle:checked + #wrap #toggle_nav + label.bg {
+        left: 0;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out 0.3s;
+        z-index: 200;
+    }
+
+
+ #toggle + #wrap{
+	position: absolute; 
+	right: 0;
+	width: 100%;
+	transition-duration: 0.3s;
+}
+
+#toggle:checked + #wrap {
+    position: fixed; 
+    right: 80%;
+}
+
+/*#toggle + #wrap #toggle_nav + label.bg{
+    width: 20%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    left: -20%; top: 0;
+	z-index: 100;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-delay: 0.3s;
+}
+#toggle:checked + #wrap #toggle_nav + label.bg{
+    left: 0;
+	opacity: 1;
+} */
+
+#toggle + #wrap #toggle_nav {
+    width: 80%; 
+    height: 100%;
+    position: fixed;
+    right: -80%; 
+    top: 0; 
+    bottom: 0;
+	background-color: #fff;
+	transition-duration: 0.3s;
+	overflow: auto;
+    z-index: 200;
+}
+
+#toggle:checked + #wrap #toggle_nav {
+    right:0;
+}
+
+    #wrap #toggle_nav > ul {
+        padding: 50px 0 0;
+    }
+
+    #wrap #toggle_nav > ul > li {
+        line-height: 50px;
+        padding: 0 30px;
+    }
+
+    #toggle_nav > ul > li > a {
+        display: none;
+    }
+
+    #toggle_nav > ul > li > h2 {
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    #toggle_nav > ul > li > h2::after {
+        content: '';
+        display: block;
+        position: absolute;
+        margin-top: -36px;
+        right: 50px;
+        width: 20px;
+        height: 20px;
+        transition: all .3s ease-in-out;
+        background: url(../img/common_sprites.svg);
+        background-position: -199px -285px;
+    }
+
+    #toggle_nav > ul > li > ul > li {
+        height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition-duration: 0.3s;
+    }
+
+    #toggle_nav > ul > li > ul > li > a {
+        font-size: 0.9em;
+    }
+
+
+.section--slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    top: 43px;
+}
+
+.input__container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+.options .tit-option {
+    text-align: center;
+}
+
+.options .btn-option ul {
+    justify-content: center;
+}
+
+.options {
+    margin: 50px 0 0;
+}
+
+.service {
+    padding: 70px 70px 77px;
+}
